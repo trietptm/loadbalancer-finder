@@ -29,7 +29,6 @@ try:
 except ImportError, e:
     sys.exit(e)
 
-
 # FQDN of SCM
 scm_url = 'code.google.com'
 # Location of project in FQDN
@@ -66,7 +65,7 @@ def update_git_repo(scm_url, scm_url_location):
         return
     full_url = scm_url + scm_url_location
     print 'Updating from URL: %s' % 'https://' + full_url
-    git.Git().checkout(force=True)
+    git.Git("./").checkout(force=True)
 
 def update():
     update_git_repo(scm_url, scm_url_location)

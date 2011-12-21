@@ -108,6 +108,11 @@ if __name__ == '__main__':
     progOptions.verbose = args.verbose
     
     
+    if args.update:
+        utils.printMessage("[*] Going to update Load Balancer Finder", "info", progOptions)
+        updater.update()
+        sys.exit(1)
+    
     # Configuration parsing
     cfg = ConfigParser.ConfigParser()
     try:
@@ -130,12 +135,6 @@ if __name__ == '__main__':
     
     # Battery tests
     dns_servers_round_robin = utils.readDNSServers("dnsservers.txt", progOptions)
-
-    
-    if args.update:
-        utils.printMessage("[*] Going to update Load Balancer Finder", "info", progOptions)
-        updater.update()
-        sys.exit(1)
     
     domain = args.domain
     host = domain
