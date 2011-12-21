@@ -63,7 +63,7 @@ def usage():
 Tries to find load balancers using several methods:
     - Check multiple DNS "A" entries
     - IPID Analysis
-    - TCP TTL value analysis
+    - IP TTL value analysis
     - Server banner analysis
     - Well-known load balancer cookies checking
     - HTTP Date header timestamp analysis

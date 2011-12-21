@@ -36,12 +36,12 @@ import utils
 '''
 def checkTTLF5(host, port, domain, timeout, progOptions):
     try:
-        utils.printMessage("[*] Analyzing TCP TTL value", "info", progOptions)
+        utils.printMessage("[*] Analyzing IP TTL value", "info", progOptions)
         packet = sr1(IP(dst=domain)/TCP(sport=RandNum(1024,65535), dport=port), timeout=timeout)
         if packet.getlayer('IP').ttl >= 230:
-            utils.printMessage("   [+] TCP TTL is %s, so high number is common in F5 Load Balancers" %packet.getlayer('IP').ttl, "plus", progOptions)
+            utils.printMessage("   [+] IP TTL is %s, so high number is common in F5 Load Balancers" %packet.getlayer('IP').ttl, "plus", progOptions)
         else:
-            utils.printMessage("   [-] No high TCP TTL received", "less", progOptions)
+            utils.printMessage("   [-] No high IP TTL received", "less", progOptions)
     except KeyboardInterrupt:
         utils.printMessage("[!] Aborted by user...", "error", progOptions)
         sys.exit()
