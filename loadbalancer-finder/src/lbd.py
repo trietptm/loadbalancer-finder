@@ -47,6 +47,7 @@ import argparse
 import utils
 import methods
 import updater
+import os
 
 
 
@@ -83,6 +84,7 @@ if __name__ == '__main__':
     
     banner()
     
+    
     parser = argparse.ArgumentParser()
     gr1 = parser.add_argument_group("Main options")
     gr1.add_argument('-d', '--domain', dest='domain', required=False, help='domain to check')
@@ -112,6 +114,12 @@ if __name__ == '__main__':
         utils.printMessage("[*] Going to update Load Balancer Finder", "info", progOptions)
         updater.update()
         sys.exit(1)
+    
+    
+    if not os.geteuid()==0:
+        utils.printMessage("[-] You have to be root (scapy packet injection)", "error", progOptions)
+        sys.exit(0)
+    
     
     # Configuration parsing
     cfg = ConfigParser.ConfigParser()
