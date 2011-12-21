@@ -1,0 +1,5 @@
+'''
+Created on 03/11/2011
+root@ph0b0s:/home/z0mbiehunt3r/workspace/loadbalancer-finder/src# for line in $(cat domains.txt); do ./main.py -p 80 -v -d "$line"; done | tee -a salida.txt
+@author: z0mbiehunt3r
+'''

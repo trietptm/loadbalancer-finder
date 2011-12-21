@@ -1,0 +1,15 @@
+[packets]
+# Specifiy number of probes/packets sents
+ipid_syn = 15
+nicmp_packets = 10
+tcp_timestamp = 10
+banner_retrieves = 5
+cookie_retrieves = 5
+httptimestamp_retrieves = 5
+socket_timeout = 5
+dns_queries = 5
+
+[HTTP]
+useragent="User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/535.2 (KHTML, like Gecko) Chrome/15.0.874.106 Safari/535"
+http_timeout=5
+f5enumeration = 10
