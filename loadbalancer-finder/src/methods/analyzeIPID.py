@@ -29,7 +29,7 @@ except:
 try:
     from pyx import *
 except:
-    print "[-] You need PYX (http://www.scapy.org/)"
+    print "[-] You need PYX (http://pyx.sourceforge.net/)"
     sys.exit(0)    
 import utils
 

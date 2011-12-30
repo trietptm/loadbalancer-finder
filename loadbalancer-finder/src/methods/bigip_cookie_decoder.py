@@ -15,7 +15,8 @@
 # Credits: (based on) 
 # http://penturalabs.wordpress.com/2011/03/29/how-to-decode-big-ip-f5-persistence-cookie-values/
 
-# Example cookie value (encoded string): 1677787402.36895.0000
+# Example cookie value (encoded string): 1677787402.36895.0000, 187884042.38175.0000, 
+#   53666314.38175.0000, 3540062380.512.0000
 
 
 import struct
@@ -23,7 +24,7 @@ import re
 import utils
 
 def BIGIPCookieDecoder(cookie, progOptions):
-    encoded_string = re.search("\d{10}\.\d{5}\.\d{4}", cookie)
+    encoded_string = re.search("\d{8,10}\.\d{1,5}\.\d{4}", cookie)
     if encoded_string is not None:
         encoded_string = encoded_string.group(0) 
         (host, port, end) = encoded_string.split('.')

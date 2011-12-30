@@ -1,0 +1,4 @@
+Thanks to following people for helping me to improve Load Balancer Finder
+
+Henri Salo <henri@nerv.fi>: Autoupdate feature and some fixes
+Dalibor Dukic: BIG-P F5 Load Balancer cookie detection improvement

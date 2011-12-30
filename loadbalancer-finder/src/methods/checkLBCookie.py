@@ -37,7 +37,7 @@ def checkLBCookie(host, port, ssl, useragent, timeout, f5enumeration, progOption
         cookie = utils.getHTTPHeader(host, port, ssl, "set-cookie", useragent, timeout, progOptions)
         if cookie:
             # Lookup for some known cookies - Send me yours!
-            if re.search("BIGipServer", cookie):
+            if re.search("BIGipServer", cookie) or re.search('\d{8,10}\.\d{1,5}\.\d{4}', cookie):
                 lbdetected = "   [+] F5 load balancer detected"
                 f5 = 1
             elif re.search("KEMPID=", cookie):
