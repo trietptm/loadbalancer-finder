@@ -1,4 +1,7 @@
 Thanks to following people for helping me to improve Load Balancer Finder
 
+Rubén Garrote García (Boken) <boken00@gmail.com>: Ideas, helping me and his getNumLBfromIPIDS function
+Daniel García García (Crohn) <dani@iniqua.com>: Ideas and helping me
+Raúl Siles: For his F5 BIGIP Cookie Decoder script
 Henri Salo <henri@nerv.fi>: Autoupdate feature and some fixes
 Dalibor Dukic: BIG-P F5 Load Balancer cookie detection improvement
