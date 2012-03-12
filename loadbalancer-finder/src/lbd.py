@@ -159,4 +159,11 @@ if __name__ == '__main__':
     methods.checkICMPTimestamp(host, socket_timeout, nicmp_packets, args.verbose, progOptions)
     methods.checkTCPTimestamp(host, port, tcp_timestamp, socket_timeout, args.verbose, progOptions)
     methods.analyzeDNSRoundRobin(domain, dns_queries, dns_servers_round_robin, progOptions)
+    utils.printMessage("[*] Looking for known load balancers HTTP 'Server' header", "info", progOptions)
+    lb = methods.analyzeServerBanner(host, port, args.ssl, useragent, http_timeout, progOptions)
+    if lb:
+        utils.printMessage("   [+] Known HTTP 'Server' header found for %s" %lb, "plus", progOptions)
+    else:
+        utils.printMessage("   [-] No known HTTP 'Server' header found", "less", progOptions)
+    
     utils.printMessage("[-] All tests done...\n\n", "info", progOptions)

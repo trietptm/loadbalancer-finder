@@ -5,3 +5,4 @@ Daniel García García (Crohn) <dani@iniqua.com>: Ideas and helping me
 Raúl Siles: For his F5 BIGIP Cookie Decoder script
 Henri Salo <henri@nerv.fi>: Autoupdate feature and some fixes
 Dalibor Dukic: BIG-P F5 Load Balancer cookie detection improvement
+Adam Maxwel <@catalyst256>: Ideas and helping me with cookies and Citrix Net Scaler load balancers

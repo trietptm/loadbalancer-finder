@@ -48,8 +48,19 @@ def checkLBCookie(host, port, ssl, useragent, timeout, f5enumeration, progOption
                 lbdetected = "   [+] HAProxy load balancer detected"
             elif re.search("ACE-Insert=", cookie):
                 lbdetected = "   [+] Cisco ACE load balancer detected"
-            if re.search("Cisco Acceleration", cookie):
-                lbdetected = "   [+] Cisco ACE load balancer detected"
+            elif re.search("jnAccel", cookie):
+                lbdetected = "   [+] jetNexus load balancer detected"    
+            elif re.search("BARRACUDA_LB_COOKIE", cookie):
+                lbdetected = "   [+] Barracuda load balancer detected"                
+            elif re.search("NSC_", cookie):
+                lbdetected = "   [+] Net Scaler load balancer detected"                
+            elif re.search("X-RBT-Optimized", cookie):
+                lbdetected = "   [+] Riverbed load balancer detected"                
+            elif re.search("FGTServer", cookie):
+                lbdetected = "   [+] Fortigate load balancer detected"                
+            elif re.search("Coyote-", cookie):
+                lbdetected = "   [+] CoyotePoint load balancer detected"                
+                
             if lbdetected != "":
                 utils.printMessage(lbdetected, "plus", progOptions)
                 if f5:

@@ -53,7 +53,7 @@ def checkICMPTimestamp(host, timeout, nicmp_packets, verbose, progOptions):
             if not found:
                 utils.printMessage("   [-] No ICMP inconsistencies found", "less", progOptions)
             else:
-                utils.printMessage("   [+] ICMP timestamp inconsistency found", "info", progOptions)
+                utils.printMessage("   [+] ICMP timestamp inconsistency found", "plus", progOptions)
                 if verbose:
                     utils.printMessage("   [v] IPIDs received: %s" %str(timestamps), "verbose", progOptions)
         else:

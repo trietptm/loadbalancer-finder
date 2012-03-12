@@ -33,13 +33,16 @@ import utils
     TTL greater than 230 (and some lower values) commonly seen with F5 Load Balancers
     Also seen in some SOHO Huawei routers....
     Tested on some thousand IP to be almost sure about that
+    UDATE: Seen also in some others load balancers, need testing and study
 '''
 def checkTTLF5(host, port, domain, timeout, progOptions):
     try:
         utils.printMessage("[*] Analyzing IP TTL value", "info", progOptions)
         packet = sr1(IP(dst=domain)/TCP(sport=RandNum(1024,65535), dport=port), timeout=timeout)
         if packet.getlayer('IP').ttl >= 230:
-            utils.printMessage("   [+] IP TTL is %s, so high number is common in F5 Load Balancers" %packet.getlayer('IP').ttl, "plus", progOptions)
+            #utils.printMessage("   [+] IP TTL is %s, so high number is common in F5 Load Balancers" %packet.getlayer('IP').ttl, "plus", progOptions)
+            # UPDATE
+            utils.printMessage("   [+] IP TTL is %s, so high number is common in some Load Balancers" %packet.getlayer('IP').ttl, "plus", progOptions)
         else:
             utils.printMessage("   [-] No high IP TTL received", "less", progOptions)
     except KeyboardInterrupt:
