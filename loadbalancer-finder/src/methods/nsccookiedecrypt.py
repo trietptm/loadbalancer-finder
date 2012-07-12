@@ -95,7 +95,7 @@ def decryptCookie(cookie):
     servicename, serverip, serverport = parseCookie(cookie)
     realname = decryptServiceName(servicename)
     realip = decryptServerIP(serverip)
-    realport = decryptServerPort(serverip)
+    realport = decryptServerPort(serverport)
     return realname,realip,realport
 
 if __name__ == '__main__':
